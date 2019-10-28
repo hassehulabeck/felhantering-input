@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Värden från input är alltid string, även om input-typen är number.
         console.log(typeof (age));
 
-        // Blandar string och number för att "tvinga" fram ett fel.
-        var whatYear = "User is " + year - (Math.floor(age / 2));
+        var whatYear = year - (Math.floor(age / 2));
 
         message.innerText = whatYear;
     })
