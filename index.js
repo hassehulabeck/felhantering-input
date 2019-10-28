@@ -13,10 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
         // Värden från input är alltid string, även om input-typen är number.
         console.log(typeof (age));
 
-        // Blandar string och number för att "tvinga" fram ett fel.
-        var whatYear = "User is " + year - (Math.floor(age / 2));
-
-        message.innerText = whatYear;
+        try {
+            // Blandar string och number för att "tvinga" fram ett fel.
+            var whatYear = "User is " + year - (Math.floor(age / 2));
+            console.log(whatYear);
+            if (isNaN(whatYear))
+                throw "NAAAAN"
+            message.innerText = whatYear;
+        } catch (err) {
+            console.error(err);
+            message.innerText = "Det är inte du, det är jag som programmerade sidan som gjorde fel."
+        }
     })
 
 })
